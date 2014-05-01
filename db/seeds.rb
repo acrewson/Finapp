@@ -10,8 +10,8 @@ u.save
 
 u = User.new
 u.email = 'crewdog@gmail.com'
-u.password = 'thisisatest'
-u.password_confirmation = 'thisisatest'
+u.password = 'password'
+u.password_confirmation = 'password'
 u.save
 
 # Create a log

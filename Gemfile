@@ -38,6 +38,10 @@ gem 'devise'
 # Add a gem file to let us see data in a table format
 gem "hirb"
 
+# Adding a gem to let me pull data from yahoo finance
+gem 'yahoo-finance'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
