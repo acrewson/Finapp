@@ -10,7 +10,7 @@ class CreateItems < ActiveRecord::Migration
       t.integer :deprec_months
       t.integer :method_id
       t.integer :user_id
-      t.binary :is_outlier
+      t.boolean :is_outlier
 
       t.timestamps
     end

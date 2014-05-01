@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140430034303) do
+ActiveRecord::Schema.define(version: 20140430222326) do
 
   create_table "budgets", force: true do |t|
     t.integer  "log_id"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20140430034303) do
     t.integer  "deprec_months"
     t.integer  "method_id"
     t.integer  "user_id"
-    t.binary   "is_outlier"
+    t.boolean  "is_outlier"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20140430034303) do
   create_table "logs", force: true do |t|
     t.string   "log_name"
     t.integer  "main_user_id"
+    t.date     "datedeleted"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -55,7 +56,14 @@ ActiveRecord::Schema.define(version: 20140430034303) do
   create_table "payment_methods", force: true do |t|
     t.integer  "log_id"
     t.string   "method_name"
-    t.binary   "is_default"
+    t.boolean  "is_default"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_logs", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "log_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

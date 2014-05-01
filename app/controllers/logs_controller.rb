@@ -1,7 +1,12 @@
 class LogsController < ApplicationController
 
-def index
+  before_action :authenticate_user!
 
-end
+
+  def index
+    @logs = Log.joins(:user_logs).where("user_logs.user_id = ? and logs.datedeleted is ?", current_user.id, nil)
+
+
+  end
 
 end

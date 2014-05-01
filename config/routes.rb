@@ -11,7 +11,7 @@ Expense::Application.routes.draw do
 
 
   # Resources
-  resources :logs, shallow: true do
+  resources :logs do
     resources :expenses
   end
 
