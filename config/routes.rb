@@ -1,4 +1,4 @@
-Expense::Application.routes.draw do
+Finapp::Application.routes.draw do
 
   root :to => 'welcome#main'
 

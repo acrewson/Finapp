@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Expense::Application.config.secret_key_base = '822ece5ed39d0611b96622e625a4604b8dce812ba251bffd08fe7f36b23800aff7e92b6a3390b2566d9fecab8314ec4874aa97eb791d34c8ce4fbbda468ea6e2'
+Finapp::Application.config.secret_key_base = '822ece5ed39d0611b96622e625a4604b8dce812ba251bffd08fe7f36b23800aff7e92b6a3390b2566d9fecab8314ec4874aa97eb791d34c8ce4fbbda468ea6e2'
