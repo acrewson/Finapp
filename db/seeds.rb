@@ -55,7 +55,7 @@ ul.save
   p.save
 
 # Put some expenses on that log
- Item.destroy_all
+ Expense.destroy_all
 
  i = [
    {
@@ -105,7 +105,7 @@ ul.save
  ]
 
   i.each do |exp|
-    e = Item.new
+    e = Expense.new
     e.log_id = exp[:log_id]
     e.description = exp[:description]
     e.amount = exp[:amount]

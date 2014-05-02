@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140430222326) do
+ActiveRecord::Schema.define(version: 20140502035710) do
 
   create_table "budgets", force: true do |t|
     t.integer  "log_id"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140430222326) do
     t.datetime "updated_at"
   end
 
-  create_table "items", force: true do |t|
+  create_table "expenses", force: true do |t|
     t.integer  "log_id"
     t.string   "description"
     t.decimal  "amount"

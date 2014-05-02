@@ -4,13 +4,17 @@
     <table class="table table-striped table-bordered">
       <thead>
         <tr class="blue_white_table_header">
-          <th>Expense Description</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Price</th>
         </tr>
       </thead>
       <tbody>
         <% @expenses.each do |exp| %>
           <tr>
             <td><%= link_to exp.description, log_expense_path(exp.log_id, exp.id), method: :get %></td>
+            <td><%= exp.category.name %></td>
+            <td><%= exp.amount %></td>
           </tr>
         <% end %>
       </tbody>
