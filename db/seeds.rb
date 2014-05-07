@@ -1,4 +1,4 @@
-require 'Time'
+# require 'Time'
 
 # Create a couple fake users
 u = User.new
