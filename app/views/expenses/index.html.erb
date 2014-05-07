@@ -1,22 +1,32 @@
 <h1>Here are your expenses:</h1>
 
-  <div class="padding_bottom">
-    <table class="table table-striped table-bordered">
-      <thead>
-        <tr class="blue_white_table_header">
-          <th>Description</th>
-          <th>Category</th>
-          <th>Price</th>
+
+<div>
+  <button type="button" class="btn btn-primary btn-lg">New Expense</button>
+</div>
+
+<div class="btn btn-primary btn-lg">
+  <%= link_to "New Expense", new_log_expense_path(1), method: :get, :class => "btn" %>
+</div>
+
+
+<div class="padding_bottom">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr class="blue_white_table_header">
+        <th>Description</th>
+        <th>Category</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @expenses.each do |exp| %>
+        <tr>
+          <td><%= link_to exp.description, log_expense_path(exp.log_id, exp.id), method: :get %></td>
+          <td><%= exp.category.name %></td>
+          <td><%= exp.amount %></td>
         </tr>
-      </thead>
-      <tbody>
-        <% @expenses.each do |exp| %>
-          <tr>
-            <td><%= link_to exp.description, log_expense_path(exp.log_id, exp.id), method: :get %></td>
-            <td><%= exp.category.name %></td>
-            <td><%= exp.amount %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+      <% end %>
+    </tbody>
+  </table>
+</div>

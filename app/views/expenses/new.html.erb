@@ -1,0 +1,60 @@
+
+<div class="col-md-3"></div>
+<div class="col-md-6">
+  <h1>Add new expense:</h1>
+
+  <div class="form-group">
+    <label for="cashdate">Cash Date</label>
+    <input name = "cashdate" type="text" class="form-control datepicker" id="cashdate">
+  </div>
+  <div class="form-group">
+    <label for="expensedate">Expense Date</label>
+    <input name = "expensedate" type="text" class="form-control datepicker" id="expensedate">
+  </div>
+  <div class="form-group">
+
+    <label for="description">Description</label>
+    <input name = "description" type="text" class="form-control" id="description" placeholder="Expense Descripton">
+  </div>
+  <div class="form-group">
+
+    <label for="amount">Amount</label>
+    <input name = "amount" type="number" class="form-control" id="amount">
+  </div>
+  <div class="form-group">
+
+    <label for="category">Category</label>
+    <select name="category" id="category">
+      <option value=""></option>
+      <% @categories.each do |ct|  %>
+        <option value="<%= ct.id %>"><%= ct.name %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class="form-group">
+
+    <label for="pmeth">Payment Method</label>
+    <select name="pmeth" id="pmeth">
+      <option value=""></option>
+      <% @pmethods.each do |pm|  %>
+        <option value="<%= pm.id %>"><%= pm.method_name %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="deprec"># Months spread</label>
+      <input name = "deprec" type="number" class="form-control" id="deprec">
+  </div>
+
+  <div class="form-group">
+    <label for="isout">Outlier Purchase?</label>
+    <input id="isout" name = "isout" type="checkbox" value=true>
+  </div>
+
+
+</div>
+<div class="col-md-3"></div>
+
+
+
+

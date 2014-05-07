@@ -26,6 +26,18 @@
   });
   </script>
 
+  <!-- This is the jquery datepicker -->
+  <script>
+  $(function() {
+    $( "input.datepicker" ).datepicker();
+    $( "input.datepicker").datepicker("setDate","today");
+  });
+  </script>
+
+
+
+
+
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,7 +79,7 @@
 
   </nav>
 
-    <div class="container">
+  <div class="container">
 
     <!-- These are for the devise gem -->
     <% if notice %>
