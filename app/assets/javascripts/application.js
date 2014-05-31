@@ -9,12 +9,15 @@
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+
 //= require jquery
 //= require jquery_ujs
+
 //= require turbolinks
 //= require_tree .
 
 //= require pickadate/picker
 //= require pickadate/picker.date
 //= require pickadate/picker.time
+
+//= require jquery.mobile.custom

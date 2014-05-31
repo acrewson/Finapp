@@ -51,7 +51,7 @@ gem 'yahoo-finance'
 # Fancy date picker
 gem 'pickadate-rails'
 
-
+gem 'jquery-mobile-rails-assets'
 
 
 # Use ActiveModel has_secure_password
