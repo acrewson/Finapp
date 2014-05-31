@@ -3,7 +3,7 @@ class ExpensesController < ApplicationController
 
   # This shows the expenses on the log
   def index
-    @expenses = Log.find_by(:id => params[:log_id]).expenses
+    @expenses = Log.find_by(:id => params[:log_id]).expenses.order(:date_cash)
   end
 
   # For creating a new expense on the log
