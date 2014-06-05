@@ -1,6 +1,8 @@
 # require 'Time'
 
 # Create a couple fake users
+User.destroy_all
+
 u = User.new
 u.email = 'test@gmail.com'
 u.password = 'password'
@@ -15,12 +17,16 @@ u.password_confirmation = 'password'
 u.save
 
 # Create a log
+Log.destroy_all
+
 l = Log.new
 l.log_name = "Crewson Expenses"
 l.main_user_id = User.find_by(:email => "test@gmail.com").id
 l.save
 
 # Permission myself to that log
+UserLog.destroy_all
+
 ul = UserLog.new
 ul.user_id = User.find_by(:email => "test@gmail.com").id
 ul.log_id = Log.find_by(:log_name => "Crewson Expenses").id
