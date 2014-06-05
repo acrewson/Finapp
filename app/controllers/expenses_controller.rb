@@ -14,5 +14,27 @@ class ExpensesController < ApplicationController
     @pmethods = Log.find_by(:id => params[:log_id]).payment_methods
   end
 
+  # To save a new expense to the database
+  def create
+    exp = Expense.new
+    exp.log_id = params[:log_id]
+    exp.description = params[:description]
+    exp.amount = params[:amount]
+    exp.date_cash = params[:cashdate]
+    exp.date_expense = params[:expensedate]
+    exp.category_id = params[:category]
+    exp.deprec_months = params[:deprec]
+    exp.method_id = params[:pmeth]
+    exp.user_id = params[:log_id]
+    exp.is_outlier = params[:isout]
+    exp.save
+    # NOTE: need to put logic around these about how to handle when blank
+
+    redirect_to "/logs/#{params[:log_id]}/expenses"
+
+  end
+
+
+
 
 end
