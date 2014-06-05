@@ -4,7 +4,7 @@
 <h1>Here are your expenses:</h1>
 
 <div>
-  <%= link_to "New Expense", new_log_expense_path(1), method: :get, :class => "btn btn-primary btn-lg", :type => "button"%>
+  <%= link_to "New Expense", new_log_expense_path(@expenses.first.log_id), method: :get, :class => "btn btn-primary btn-lg", :type => "button"%>
 </div>
 
 
