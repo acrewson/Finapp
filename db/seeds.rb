@@ -116,6 +116,7 @@ ul.save
     e.description = exp[:description]
     e.amount = exp[:amount]
     e.date_cash = Date.strptime(exp[:date_cash], "%m/%d/%Y")
+    e.date_expense = Date.strptime(exp[:date_cash], "%m/%d/%Y")
     e.category_id = exp[:category_id]
     e.deprec_months = exp[:deprec_months]
     e.method_id = exp[:method_id]
