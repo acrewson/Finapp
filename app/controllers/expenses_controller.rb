@@ -5,15 +5,18 @@ class ExpensesController < ApplicationController
   def index
     if params[:date] == "cash"
       @expenses = Log.find_by(:id => params[:log_id]).expenses.order(:date_cash).select("id, log_id, description, amount, date(date_cash) as date_show, category_id, deprec_months, method_id, user_id, is_outlier")
-      @dates = @expenses.select("date(date_cash) as date_show, sum(amount) as date_amount").group("date_cash").order(:date_cash)
+      @dates = @expenses.select("date(date_cash) as date_show, sum(amount) as date_amount").group("date(date_cash)").order("date(date_cash)")
 
     else
       @expenses = Log.find_by(:id => params[:log_id]).expenses.order(:date_expense).select("id, log_id, description, amount, date(date_expense) as date_show, category_id, deprec_months, method_id, user_id, is_outlier")
-      @dates = @expenses.select("date(date_expense) as date_show, sum(amount) as date_amount").group("date_expense").order(:date_expense)
+      @dates = @expenses.select("date(date_expense) as date_show, sum(amount) as date_amount").group("date(date_expense)").order("date(date_expense)")
     end
 
 
   end
+
+
+
 
   # For creating a new expense on the log
   def new
