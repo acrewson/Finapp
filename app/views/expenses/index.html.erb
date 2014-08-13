@@ -18,11 +18,11 @@
     <% @dates.each do |dt| %>
     <thead>
       <tr class="blue_white_table_header">
-        <th colspan="3"><%= dt.date_show.to_date.to_formatted_s(:long) %></th>
+        <th colspan="3"><%= dt.ds.to_date.to_formatted_s(:long) %></th>
         <th><%= number_to_currency(dt.date_amount) %></th>
       </tr>
     </thead>
-    <% @expenses.where("date_show = ?", dt.date_show).each do |exp| %>
+    <% @expenses.where("ds = ?", dt.ds).each do |exp| %>
     <tbody>
       <tr>
         <td class="center_text" width="80">
