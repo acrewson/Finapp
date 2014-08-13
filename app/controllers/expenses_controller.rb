@@ -6,12 +6,12 @@ class ExpensesController < ApplicationController
     if params[:date] == "cash"
       @expenses = Log.find_by(:id => params[:log_id]).expenses.order(:date_cash).select("id, log_id, description, amount, date(date_cash) as date_show, category_id, deprec_months, method_id, user_id, is_outlier")
 
-      @dates = Log.find_by(:id => params[:log_id]).expenses.select("date(date_cash) as date_show, sum(amount) as date_amount").group("date(date_cash)").order("date(date_cash)")
+      @dates = Log.find_by(:id => params[:log_id]).expenses.select("date(date_cash) as date_show, sum(amount) as date_amount").group("date_show").order("date_show")
 
     else
       @expenses = Log.find_by(:id => params[:log_id]).expenses.order(:date_expense).select("id, log_id, description, amount, date(date_expense) as date_show, category_id, deprec_months, method_id, user_id, is_outlier")
 
-      @dates = Log.find_by(:id => params[:log_id]).expenses.select("date(date_expense) as date_show, sum(amount) as date_amount").group("date(date_expense)").order("date(date_expense)")
+      @dates = Log.find_by(:id => params[:log_id]).expenses.select("date(date_expense) as date_show, sum(amount) as date_amount").group("date_show").order("date_show")
     end
 
 
