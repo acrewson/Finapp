@@ -4,14 +4,18 @@ class ExpensesController < ApplicationController
   # This shows the expenses on the log
   def index
     if params[:date] == "cash"
-      @exp = Log.find_by(:id => params[:log_id]).expenses.order(:date_cash).select("id, log_id, description, amount, date(date_cash) as ds, category_id, deprec_months, method_id, user_id, is_outlier")
+      @expenses = Log.find_by(:id => params[:log_id]).expenses.order(:date_cash).select("id, log_id, description, amount, date(date_cash) as date_show, category_id, deprec_months, method_id, user_id, is_outlier")
 
-      @dates = Log.find_by(:id => params[:log_id]).expenses.select("date(date_cash) as ds, sum(amount) as date_amount").group("ds").order("ds")
+      @dates = Log.find_by(:id => params[:log_id]).expenses.select("date(date_cash) as date_show, sum(amount) as date_amount").group("date_show").order("date_show")
+
+      @dname = "date_cash"
 
     else
-      @exp = Log.find_by(:id => params[:log_id]).expenses.order(:date_expense).select("id, log_id, description, amount, date(date_expense) as ds, category_id, deprec_months, method_id, user_id, is_outlier")
+      @expenses = Log.find_by(:id => params[:log_id]).expenses.order(:date_expense).select("id, log_id, description, amount, date(date_expense) as date_show, category_id, deprec_months, method_id, user_id, is_outlier")
 
-      @dates = Log.find_by(:id => params[:log_id]).expenses.select("date(date_expense) as ds, sum(amount) as date_amount").group("ds").order("ds")
+      @dates = Log.find_by(:id => params[:log_id]).expenses.select("date(date_expense) as date_show, sum(amount) as date_amount").group("date_show").order("date_show")
+
+      @dname = "date_expense"
     end
 
 
