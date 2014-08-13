@@ -4,13 +4,13 @@
 <h1>Here are your expenses:</h1>
 
 <div>
-  <%= link_to "New Expense", new_log_expense_path(@expenses.first.log_id), method: :get, :class => "btn btn-primary btn-lg", :type => "button"%>
+  <%= link_to "New Expense", new_log_expense_path(@exp.first.log_id), method: :get, :class => "btn btn-primary btn-lg", :type => "button"%>
 </div>
 
 
 <div class="btn-group">
-  <%= link_to "Cash Date", log_expenses_path(:log_id => @expenses.first.log_id, :date => "cash"), method: :get, :class => "btn btn-default", :type => "button"%>
-  <%= link_to "Expense Date", log_expenses_path(:log_id => @expenses.first.log_id, :date => "expense"), method: :get, :class => "btn btn-default", :type => "button"%>
+  <%= link_to "Cash Date", log_expenses_path(:log_id => @exp.first.log_id, :date => "cash"), method: :get, :class => "btn btn-default", :type => "button"%>
+  <%= link_to "Expense Date", log_expenses_path(:log_id => @exp.first.log_id, :date => "expense"), method: :get, :class => "btn btn-default", :type => "button"%>
 </div>
 
 <div class="padding_bottom">
@@ -22,7 +22,7 @@
         <th><%= number_to_currency(dt.date_amount) %></th>
       </tr>
     </thead>
-    <% @expenses.where("ds = ?", dt.ds).each do |exp| %>
+    <% @exp.where("ds = ?", dt.ds).each do |exp| %>
     <tbody>
       <tr>
         <td class="center_text" width="80">
