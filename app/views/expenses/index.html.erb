@@ -22,7 +22,7 @@
         <th><%= number_to_currency(dt.date_amount) %></th>
       </tr>
     </thead>
-    <% @exp.where("ds = ?", dt.ds).each do |exp| %>
+    <% @exp.where("date_cash = ?", dt.ds).each do |exp| %>
     <tbody>
       <tr>
         <td class="center_text" width="80">
